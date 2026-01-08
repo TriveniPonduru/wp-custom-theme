@@ -2,3 +2,38 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+header {
+    background: #222;
+    color: #fff;
+    padding: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+article {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+aside {
+    background: #f4f4f4;
+    padding: 15px;
+    margin-top: 20px;
+}
