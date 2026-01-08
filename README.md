@@ -22,6 +22,12 @@ WP Custom Theme is a basic WordPress theme created from scratch to understand ho
 - Created a custom page template
 - Improved understanding of WordPress template hierarchy
 
+## 
+- Created a custom post type (Projects)
+- Displayed CPT using WP_Query
+- Added widget-ready sidebar
+- Learned real-world WordPress content structuring
+
 
 # What I Learned
 - How WordPress detects and loads a theme

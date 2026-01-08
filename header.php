@@ -1,21 +1,52 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-    <meta charset="<?php bloginfo('charset'); ?>">
-    <?php wp_head(); ?>
-</head>
-<body <?php body_class(); ?>>
+<?php get_header(); ?>
 
-<header>
-    <h1><?php bloginfo('name'); ?></h1>
-    <p><?php bloginfo('description'); ?></p>
+<main>
 
-    <!-- STEP 3 addition 👇 -->
-    <nav>
+    <!-- Default Posts -->
+    <section>
+        <h2>Latest Posts</h2>
+
         <?php
-        wp_nav_menu(array(
-            'theme_location' => 'primary-menu',
-        ));
+        if (have_posts()) :
+            while (have_posts()) : the_post();
         ?>
-    </nav>
-</header>
+            <article>
+                <h3><?php the_title(); ?></h3>
+                <div><?php the_content(); ?></div>
+            </article>
+        <?php
+            endwhile;
+        else :
+            echo '<p>No posts found</p>';
+        endif;
+        ?>
+    </section>
+
+    <!-- Custom Post Type: Projects -->
+    <section>
+        <h2>Latest Projects</h2>
+
+        <?php
+        $args = array('post_type' => 'project');
+        $project_query = new WP_Query($args);
+
+        if ($project_query->have_posts()) :
+            while ($project_query->have_posts()) :
+                $project_query->the_post();
+        ?>
+            <article>
+                <h3><?php the_title(); ?></h3>
+                <div><?php the_content(); ?></div>
+            </article>
+        <?php
+            endwhile;
+            wp_reset_postdata();
+        else :
+            echo '<p>No projects found</p>';
+        endif;
+        ?>
+    </section>
+
+</main>
+
+<?php get_footer(); ?>
