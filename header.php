@@ -5,7 +5,17 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+
 <header>
     <h1><?php bloginfo('name'); ?></h1>
     <p><?php bloginfo('description'); ?></p>
+
+    <!-- STEP 3 addition 👇 -->
+    <nav>
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'primary-menu',
+        ));
+        ?>
+    </nav>
 </header>

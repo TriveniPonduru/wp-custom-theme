@@ -16,6 +16,13 @@ WP Custom Theme is a basic WordPress theme created from scratch to understand ho
 - wp_enqueue_style() and wp_enqueue_script()
 - WordPress hooks and actions
 
+#
+- Added navigation menu support using register_nav_menus()
+- Displayed menu using wp_nav_menu()
+- Created a custom page template
+- Improved understanding of WordPress template hierarchy
+
+
 # What I Learned
 - How WordPress detects and loads a theme
 - Importance of functions.php
